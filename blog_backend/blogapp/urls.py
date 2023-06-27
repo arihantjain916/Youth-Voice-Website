@@ -1,5 +1,5 @@
 from django.urls import path, include
-from .views import UserViewSet, Login, Register, BlogView
+from .views import UserViewSet, Login, Register, BlogView, CommentView
 from rest_framework import routers
 
 router = routers.DefaultRouter()
@@ -10,4 +10,5 @@ urlpatterns = [
     path("login/", Login.as_view(), name="login"),
     path("register/", Register.as_view(), name="register"),
     path("blog/", BlogView.as_view(), name="blog"),
+    path("comment/", CommentView.as_view(), name="comment"),
 ]
