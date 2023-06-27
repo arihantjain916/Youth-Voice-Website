@@ -6,7 +6,7 @@ This is the API, for blog websites.
 
 ## API Reference
 
-#### Note: 
+**Note**: 
 1. Before use all routes, login is must because login route generate JWT token which is essential to use all routes. 
 2. Add Autherization in the header with Bearer.
 
@@ -101,7 +101,7 @@ Go to the project directory
 Install dependencies
 
 ```bash
-  pip install requirements.txt
+  pip install Requirements.txt
 ```
 Do Migrations
 
