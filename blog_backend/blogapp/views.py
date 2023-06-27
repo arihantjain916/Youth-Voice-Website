@@ -1,7 +1,7 @@
 from rest_framework import generics
 from rest_framework.response import Response
 from rest_framework.status import HTTP_200_OK, HTTP_400_BAD_REQUEST
-from .models import Blog
+from .models import Blog, Comments
 from django.contrib.auth.models import User
 from .serializers import (
     BlogSerializer,
@@ -9,6 +9,7 @@ from .serializers import (
     UserCreateSerializer,
     UserSerializer,
     BlogViewSerializer,
+    CommentSerializer,
 )
 from rest_framework import viewsets
 from rest_framework.decorators import action
@@ -25,6 +26,7 @@ from django.core.paginator import Paginator
 class Register(APIView):
     queryset = User.objects.all()
     serializer_class = UserCreateSerializer
+
     def post(self, request):
         """Register a new user"""
         data = request.data
@@ -45,6 +47,7 @@ class Register(APIView):
 class Login(APIView):
     queryset = User.objects.all()
     serializer_class = UserLoginSerializer
+
     def post(self, request):
         try:
             data = request.data
@@ -97,13 +100,12 @@ class BlogView(APIView):
     def get(self, request):
         try:
             blogs = Blog.objects.filter(author=request.user)
-
             if request.GET.get("search"):
                 search = request.GET.get("search")
                 blogs = blogs.filter(
                     Q(title__icontains=search) | Q(content__icontains=search)
                 )
-                
+
             serializer_class = BlogSerializer(blogs, many=True)
             return Response(
                 {
@@ -251,3 +253,59 @@ class PublicBlog(APIView):
             )
         except Exception as e:
             return Response({"message": "Something went wrong or invalid page"})
+
+
+# Comment View
+class CommentView(APIView):
+    permission_classes = [IsAuthenticated]
+    authentication_classes = [JWTAuthentication]
+
+    # Get verified comment
+    def get(self, request):
+        try:
+            data = request.data
+            comment = Comments.objects.filter(blog=data.get("blog"))
+
+            # if not comment.is_verified:
+            #     return Response({
+            #         "message": "Only verified contents shown"
+            #     })
+            serializer_class = CommentSerializer(comment, many=True)
+            return Response(
+                {
+                    "data": serializer_class.data,
+                    "message": "Comment Fetched Successfully",
+                    "status": HTTP_200_OK,
+                }
+            )
+        except Exception as e:
+            print(e)
+            return Response({"message": str(e), "data": {}})
+
+    # Create comment
+    def post(self, request):
+        try:
+            data = request.data
+            data["commenter"] = request.user.id
+            serializer_class = CommentSerializer(data=data)
+            blog = Blog.objects.filter(id=data.get("blog")).exists()
+            if not blog:
+                return Response(
+                    {
+                        "data": {},
+                        "message": "Blog not exist",
+                        "code": HTTP_400_BAD_REQUEST,
+                    }
+                )
+            if serializer_class.is_valid(raise_exception=True):
+                serializer_class.save()
+                return Response(
+                    {
+                        "data": serializer_class.data,
+                        "message": "Comment Post Successfully",
+                        "code": 201,
+                    }
+                )
+        except Exception as e:
+            print(e)
+            return Response(serializer_class.errors, status=HTTP_400_BAD_REQUEST)
