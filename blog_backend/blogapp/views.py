@@ -264,12 +264,7 @@ class CommentView(APIView):
     def get(self, request):
         try:
             data = request.data
-            comment = Comments.objects.filter(blog=data.get("blog"))
-
-            # if not comment.is_verified:
-            #     return Response({
-            #         "message": "Only verified contents shown"
-            #     })
+            comment = Comments.objects.filter(blog=data.get("blog"), is_verified = True)
             serializer_class = CommentSerializer(comment, many=True)
             return Response(
                 {
