@@ -6,7 +6,7 @@ This is the API, for blog websites.
 
 ## API Reference
 
-**Note**: 
+#### Note: 
 1. Before use all routes, login is must because login route generate JWT token which is essential to use all routes. 
 2. Add Autherization in the header with Bearer.
 
@@ -82,6 +82,28 @@ This is the API, for blog websites.
 | `username`| `string` | **Required**. username            |
 | `password`| `string` | **Required**. password            |
 
+#### Post Comment
+
+```http
+  POST /api/comment/
+```
+
+| Body      | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `blog`    | `string` | **Required**. blog id             |
+| `comment` | `string` | **Required**. comment             |
+
+#### View Verified Comment
+
+```http
+  GET /api/comment/
+```
+
+| Body      | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `blog`    | `string` | **Required**. blog id             |
+
+
 
 
 ## Run Locally
@@ -101,7 +123,7 @@ Go to the project directory
 Install dependencies
 
 ```bash
-  pip install Requirements.txt
+  pip install requirements.txt
 ```
 Do Migrations
 
@@ -125,22 +147,21 @@ Start the server
 
 ## Roadmap
 
-- Make the frontend using next.js
+- Make the frontend using nextjs
 
 - Add more integrations
 
 - Check for security loop
-  
-- Implement login using Google OAuth
-  
-- Implement Comments section
 
+- Integrate Google OAuth
+
+- Add comment functionality (DONE)
 
 # Hi, I'm Arihant Jain! 👋
 
 
 ## 🚀 About Me
-I'm a full-stack developer...
+I'm a full stack developer...
 
 
 ## 🛠 Skills
