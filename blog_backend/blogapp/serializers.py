@@ -1,7 +1,8 @@
 from rest_framework import serializers
 from rest_framework.validators import UniqueValidator
-from .models import Blog
+from .models import Blog, Comments
 from django.contrib.auth.models import User
+
 
 # Register Serializer
 class UserCreateSerializer(serializers.Serializer):
@@ -24,6 +25,7 @@ class UserCreateSerializer(serializers.Serializer):
         user.save()
         return user
 
+
 # Login Serializer
 class UserLoginSerializer(serializers.Serializer):
     username = serializers.CharField()
@@ -33,11 +35,13 @@ class UserLoginSerializer(serializers.Serializer):
         model = User
         fields = ("password", "username")
 
+
 # Show all blogs of the user Serializer
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = "__all__"
+
 
 # Show all blog Serializer
 class BlogViewSerializer(serializers.ModelSerializer):
@@ -47,8 +51,18 @@ class BlogViewSerializer(serializers.ModelSerializer):
         model = Blog
         fields = "__all__"
 
+
 # Create blog Serializer
 class BlogSerializer(serializers.ModelSerializer):
     class Meta:
         model = Blog
         exclude = ["date_created", "date_updated"]
+
+
+# Create comment
+class CommentSerializer(serializers.ModelSerializer):
+    comment = serializers.CharField()
+    class Meta:
+        model = Comments
+        exclude = ["created_at"]
+
