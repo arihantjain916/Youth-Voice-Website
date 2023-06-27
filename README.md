@@ -6,26 +6,21 @@ This is the API, for blog websites.
 
 ## API Reference
 
+#### Note: 
+1. Before use all routes, login is must because login route generate JWT token which is essential to use all routes. 
+2. Add Autherization in the header with Bearer.
+
 #### Get all blog
 
 ```http
-  GET /api/blog/
+  GET /api/
 ```
 
-#### Get blog
-
-```http
-  GET /api/blog/${id}/
-```
-
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `id`      | `string` | **Required**. Id of blog to fetch |
 
 #### Get blog of the user
 
 ```http
-  GET /api/user/${id}/blog/
+  GET /api/detials/user/${id}/blog/
 ```
 
 | Parameter | Type     | Description                       |
@@ -38,18 +33,18 @@ This is the API, for blog websites.
   POST /api/blog/
 ```
 
-| Parameter | Type     | Description                       |
+| Body      | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
-| `title`   | `string` | **Required**. title
+| `title`   | `string` | **Required**. title               |
 | `content` | `string` | **Required**. content             |
 
 #### update blog 
 
 ```http
-  PUT /api/blog/${id}
+  PATCH /api/blog/
 ```
 
-| Parameter | Type     | Description                       |
+| Body      | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
 | `id`      | `string` | **Required**. id to update the blog|
 
@@ -57,10 +52,10 @@ This is the API, for blog websites.
 #### delete blog 
 
 ```http
-  DELETE /api/blog/${id}
+  DELETE /api/blog/
 ```
 
-| Parameter | Type     | Description                       |
+| Body      | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
 | `id`      | `string` | **Required**. id to delete the blog|
 
@@ -70,9 +65,9 @@ This is the API, for blog websites.
   POST /api/user/
 ```
 
-| Parameter | Type     | Description                       |
+| Body      | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
-| `name`    | `string` | **Required**. name                |
+| `username`| `string` | **Required**. username            |
 | `email`   | `string` | **Required**. email               |
 | `password`| `string` | **Required**. password            |
 
@@ -82,9 +77,9 @@ This is the API, for blog websites.
   POST /api/login/
 ```
 
-| Parameter | Type     | Description                       |
+| Body      | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
-| `email`   | `string` | **Required**. email               |
+| `username`| `string` | **Required**. username            |
 | `password`| `string` | **Required**. password            |
 
 
@@ -100,7 +95,7 @@ Clone the project
 Go to the project directory
 
 ```bash
-  cd Blog_API
+  cd blog_backend
 ```
 
 Install dependencies
