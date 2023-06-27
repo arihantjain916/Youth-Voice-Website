@@ -125,18 +125,22 @@ Start the server
 
 ## Roadmap
 
-- Make the frontend using nextjs
+- Make the frontend using next.js
 
 - Add more integrations
 
 - Check for security loop
+  
+- Implement login using Google OAuth
+  
+- Implement Comments section
 
 
 # Hi, I'm Arihant Jain! 👋
 
 
 ## 🚀 About Me
-I'm a full stack developer...
+I'm a full-stack developer...
 
 
 ## 🛠 Skills
