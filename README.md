@@ -103,6 +103,16 @@ This is the API, for blog websites.
 | :-------- | :------- | :-------------------------------- |
 | `blog`    | `string` | **Required**. blog id             |
 
+#### Login with Google
+
+```http
+  POST /auth/google/
+```
+
+| Body      | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+|`auth_token`| `string | **Required**. blog id            |
+
 
 
 
@@ -153,9 +163,10 @@ Start the server
 
 - Check for security loop
 
-- Integrate Google OAuth
+- Add Comment functnialty
 
-- Add comment functionality (DONE)
+- Integrate Google OAuth(DONE)
+
 
 # Hi, I'm Arihant Jain! 👋
 
