@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "blogapp",
     "corsheaders",
     "rest_framework_simplejwt",
+    "social_auth",
 ]
 
 MIDDLEWARE = [
