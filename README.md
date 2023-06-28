@@ -163,7 +163,7 @@ Start the server
 
 - Check for security loop
 
-- Add Comment functnialty
+- Add Comment functnialty(DONE)
 
 - Integrate Google OAuth(DONE)
 
