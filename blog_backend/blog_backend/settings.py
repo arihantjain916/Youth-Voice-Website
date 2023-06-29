@@ -24,6 +24,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "rest_framework",
     "blogapp",
+    "contact",
     "corsheaders",
     "rest_framework_simplejwt",
     "social_auth",
