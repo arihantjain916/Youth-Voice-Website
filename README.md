@@ -111,7 +111,20 @@ This is the API, for blog websites.
 
 | Body      | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
-|`auth_token`| `string | **Required**. blog id            |
+|`auth_token`| `string | **Required**. blog id             |
+
+#### Contact-Us
+
+```http
+  POST /contact-us/
+```
+
+| Body      | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+|`name`     | `string | **Required**. name                 |
+|`email`    | `string | **Required**. email                |
+|`message`  | `string | **Required**.  message             |
+
 
 
 
@@ -163,7 +176,9 @@ Start the server
 
 - Check for security loop
 
-- Add Comment functnialty(DONE)
+- Add Comment functionality(DONE)
+
+- Add contact-us functionality(DONE)
 
 - Integrate Google OAuth(DONE)
 
