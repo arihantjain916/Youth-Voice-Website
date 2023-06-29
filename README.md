@@ -111,7 +111,7 @@ This is the API, for blog websites.
 
 | Body      | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
-|`auth_token`| `string | **Required**. blog id             |
+|`auth_token`| `string` | **Required**. blog id             |
 
 #### Contact-Us
 
@@ -121,9 +121,9 @@ This is the API, for blog websites.
 
 | Body      | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
-|`name`     | `string | **Required**. name                 |
-|`email`    | `string | **Required**. email                |
-|`message`  | `string | **Required**.  message             |
+|`name`     | `string` | **Required**. name                 |
+|`email`    | `string` | **Required**. email                |
+|`message`  | `string` | **Required**.  message             |
 
 
 
