@@ -10,5 +10,6 @@ admin.site
 urlpatterns = [
     path("admin/", admin.site.urls), 
     path("api/", include("blogapp.urls")),
-    path("api/", include("social_auth.urls"))
+    path("auth/", include("social_auth.urls")),
+    path("contact-us/", include("contact.urls")),
     ]
