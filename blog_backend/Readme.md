@@ -164,6 +164,11 @@ Do Migrations
   python manage.py makemigrations
   python manage.py migrate
 ```
+Create SuperUser
+
+```bash
+  python manage.py createsuperuser
+```
 
 Start the server
 
