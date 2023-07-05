@@ -1,25 +1,74 @@
-# Hi, I'm Arihant Jain! 👋
+
+# Blog Frontend
+
+Frontend for Blog Website
 
 
-## 🚀 About Me
-I'm a full stack developer...
+## Route Reference
+
+#### Home page
+
+```http
+   /
+```
+
+#### Blog Page
+
+```http
+  /blog
+```
 
 
-## 🛠 Skills
-Django, Node.js, SQL, NoSQL, Reactjs, Nextjs
+#### Contact Page
+
+```http
+  /contact
+```
+
+#### About Page
+
+```http
+  /about
+```
+#### Login Page
+
+```http
+  /login
+```
+#### Register Page
+
+```http
+  /register
+```
 
 
-## 🔗 Links
-[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/arihantjain916)
-[![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/arihantjain916)
+## Run Locally
+
+Go to the project directory
+
+```bash
+  cd blog_frontend
+```
+
+Install dependencies
+
+```bash
+  npm install / yarn install
+```
+
+Start the server
+
+```bash
+  npm run dev / yarn dev
+```
 
 
-## Feedback
+## Roadmap
 
-If you have any feedback, please reach out to us at arihantj916@gmail.com
+- Additional browser support
 
+- Add more integrations
 
-## Support
+- Add UI for blog posting
 
-For support, email arihantj916@gmail.com 
 
