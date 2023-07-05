@@ -13,19 +13,29 @@ This is the API, for blog websites.
 #### Get all blog
 
 ```http
-  GET /api/
+  GET api/details/blogs/
 ```
 
 
-#### Get blog of the user
+#### Get the blog of the user
 
 ```http
-  GET /api/detials/user/${id}/blog/
+  GET /api/details/user/${id}/blog/
 ```
 
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
 | `id`      | `string` | **Required**. Id of user to fetch |
+
+#### Get the specific blog
+
+```http
+  GET /api/details/${slug}
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `slug`    | `string` | **Required**. slug                |
 
 #### create blog 
 
