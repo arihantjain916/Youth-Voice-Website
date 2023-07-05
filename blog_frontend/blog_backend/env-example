@@ -1,5 +1,0 @@
-export SOCIAL_SECRET=""
-export GOOGLE_CLIENT_ID=""
-export GOOGLE_CLIENT_SECRET=""
-export SECRET_KEY = ""
-#### Rename file name to .env ####
