@@ -7,8 +7,8 @@ This is the API, for blog websites.
 ## API Reference
 
 #### Note: 
-1. Before use all routes, login is must because login route generate JWT token which is essential to use all routes. 
-2. Add Autherization in the header with Bearer.
+1. Before using all routes, login is a must because login routes generate JWT token, which is essential to use all routes. 
+2. Add Authorization in the header with Bearer.
 
 #### Get all blog
 
@@ -111,7 +111,7 @@ This is the API, for blog websites.
 
 | Body      | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
-|`auth_token`| `string` | **Required**. blog id             |
+|`auth_token`| `string` | **Required**. auth token received by google oauth|
 
 #### Contact-Us
 
