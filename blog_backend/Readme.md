@@ -162,12 +162,6 @@ Start the server
 ```
 
 
-## Tech Stack
-
-
-**Server:** Django
-
-
 ## Roadmap
 
 - Make the frontend using nextjs
