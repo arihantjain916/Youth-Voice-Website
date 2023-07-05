@@ -164,8 +164,6 @@ Start the server
 
 ## Roadmap
 
-- Make the frontend using nextjs
-
 - Add more integrations
 
 - Check for security loop
