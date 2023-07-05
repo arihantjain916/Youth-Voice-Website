@@ -1,186 +1,19 @@
 
-# Blog API
+# Blog Website
 
-This is the API, for blog websites. 
+## Tech Stack
 
+**Client:** Nextjs
 
-## API Reference
-
-#### Note: 
-1. Before use all routes, login is must because login route generate JWT token which is essential to use all routes. 
-2. Add Autherization in the header with Bearer.
-
-#### Get all blog
-
-```http
-  GET /api/
-```
-
-
-#### Get blog of the user
-
-```http
-  GET /api/detials/user/${id}/blog/
-```
-
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `id`      | `string` | **Required**. Id of user to fetch |
-
-#### create blog 
-
-```http
-  POST /api/blog/
-```
-
-| Body      | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `title`   | `string` | **Required**. title               |
-| `content` | `string` | **Required**. content             |
-
-#### update blog 
-
-```http
-  PATCH /api/blog/
-```
-
-| Body      | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `id`      | `string` | **Required**. id to update the blog|
-
-
-#### delete blog 
-
-```http
-  DELETE /api/blog/
-```
-
-| Body      | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `id`      | `string` | **Required**. id to delete the blog|
-
-#### register new user
-
-```http
-  POST /api/user/
-```
-
-| Body      | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `username`| `string` | **Required**. username            |
-| `email`   | `string` | **Required**. email               |
-| `password`| `string` | **Required**. password            |
-
-#### login user
-
-```http
-  POST /api/login/
-```
-
-| Body      | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `username`| `string` | **Required**. username            |
-| `password`| `string` | **Required**. password            |
-
-#### Post Comment
-
-```http
-  POST /api/comment/
-```
-
-| Body      | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `blog`    | `string` | **Required**. blog id             |
-| `comment` | `string` | **Required**. comment             |
-
-#### View Verified Comment
-
-```http
-  GET /api/comment/
-```
-
-| Body      | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `blog`    | `string` | **Required**. blog id             |
-
-#### Login with Google
-
-```http
-  POST /auth/google/
-```
-
-| Body      | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-|`auth_token`| `string` | **Required**. blog id             |
-
-#### Contact-Us
-
-```http
-  POST /contact-us/
-```
-
-| Body      | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-|`name`     | `string` | **Required**. name                 |
-|`email`    | `string` | **Required**. email                |
-|`message`  | `string` | **Required**.  message             |
-
-
-
-
+**Server:** Django
 
 ## Run Locally
 
 Clone the project
 
 ```bash
-  git clone https://github.com/arihantjain916/blog_api.git
+  git clone https://github.com/arihantjain916/blog_website.git
 ```
-
-Go to the project directory
-
-```bash
-  cd blog_backend
-```
-
-Install dependencies
-
-```bash
-  pip install requirements.txt
-```
-Do Migrations
-
-```bash
-  python manage.py makemigrations
-  python manage.py migrate
-```
-
-Start the server
-
-```bash
-  python manage.py runserver
-```
-
-
-## Tech Stack
-
-
-**Server:** Django
-
-
-## Roadmap
-
-- Make the frontend using nextjs
-
-- Add more integrations
-
-- Check for security loop
-
-- Add Comment functionality(DONE)
-
-- Add contact-us functionality(DONE)
-
-- Integrate Google OAuth(DONE)
 
 
 # Hi, I'm Arihant Jain! 👋
