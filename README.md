@@ -1,8 +1,7 @@
 
 # Blog Website
-
+Welcome to the README file for the Blog Website! This web application is built using the Django framework on the backend and Next.js on the frontend. It provides a powerful and user-friendly platform for creating, managing, and sharing blog posts.
 ## Tech Stack
-
 **Client:** Nextjs
 
 **Server:** Django
