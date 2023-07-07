@@ -25,9 +25,9 @@ const FormContent = () => {
       });
 
       if (response.ok) {
-        console.log("Login successful!");
+        alert("Login successful!");
       } else {
-        console.log("Login failed");
+        alert("Login failed");
       }
     } catch (error) {
       console.log("Error:", error);
