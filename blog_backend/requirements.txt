@@ -1,0 +1,6 @@
+djangorestframework-simplejwt
+django
+djangorestframework
+django-cors-headers
+django-ckeditor
+pip install -r requirements.txt
